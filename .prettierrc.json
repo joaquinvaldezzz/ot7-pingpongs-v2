@@ -24,6 +24,6 @@
     "<TYPES>^[./]",
     "^[./]"
   ],
-  "tailwindStylesheet": "app/globals.css",
+  "tailwindStylesheet": "src/app/(frontend)/globals.css",
   "tailwindFunctions": ["cn", "cva"]
 }
