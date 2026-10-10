@@ -1,7 +1,3 @@
-import { Page, Post } from "@/payload-types";
-import { beforeSyncWithSearch } from "@/search/beforeSync";
-import { searchFields } from "@/search/fieldOverrides";
-import { getServerSideURL } from "@/utilities/getURL";
 import { formBuilderPlugin } from "@payloadcms/plugin-form-builder";
 import { nestedDocsPlugin } from "@payloadcms/plugin-nested-docs";
 import { redirectsPlugin } from "@payloadcms/plugin-redirects";
@@ -9,6 +5,11 @@ import { searchPlugin } from "@payloadcms/plugin-search";
 import { seoPlugin } from "@payloadcms/plugin-seo";
 import { GenerateTitle, GenerateURL } from "@payloadcms/plugin-seo/types";
 import { FixedToolbarFeature, HeadingFeature, lexicalEditor } from "@payloadcms/richtext-lexical";
+import { vercelBlobStorage } from "@payloadcms/storage-vercel-blob";
+import { Page, Post } from "@/payload-types";
+import { beforeSyncWithSearch } from "@/search/beforeSync";
+import { searchFields } from "@/search/fieldOverrides";
+import { getServerSideURL } from "@/utilities/getURL";
 import { Plugin } from "payload";
 
 import { revalidateRedirects } from "@/hooks/revalidateRedirects";
@@ -88,5 +89,11 @@ export const plugins: Plugin[] = [
         return [...defaultFields, ...searchFields];
       },
     },
+  }),
+  vercelBlobStorage({
+    collections: {
+      media: true,
+    },
+    token: process.env.BLOB_READ_WRITE_TOKEN,
   }),
 ];
