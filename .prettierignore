@@ -1,5 +1,3 @@
-**/payload-types.ts
-.tmp
 **/.git
 **/.hg
 **/.pnp.*
@@ -7,8 +5,10 @@
 **/.yarn/**
 **/build
 **/dist/**
-**/node_modules
-**/temp
 **/docs/**
+**/node_modules
+**/payload-types.ts
+**/temp
+.tmp
+pnpm-lock.yaml
 tsconfig.json
-
