@@ -9,6 +9,7 @@
     "<BUILTIN_MODULES>",
     "^(react/(.*)$)|^(react$)",
     "^(next/(.*)$)|^(next$)",
+    "^(@payloadcms/(.*)$)|^(@payloadcms$)",
     "^(@base-ui/(.*)$)|^(@base-ui$)",
     "<THIRD_PARTY_MODULES>",
     "",
