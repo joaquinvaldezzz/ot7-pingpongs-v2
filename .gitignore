@@ -278,3 +278,15 @@ $RECYCLE.BIN/
 
 .content-collections
 .env*
+
+# Payload default media upload directory
+public/media/
+
+public/robots.txt
+public/sitemap*.xml
+
+# Playwright
+/blob-report/
+/playwright-report/
+/playwright/.cache/
+/test-results/
